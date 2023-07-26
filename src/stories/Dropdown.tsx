@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useAppSelector } from '../store/store';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useDispatch } from 'react-redux';
-import { setFilters, Filter } from '../slice/dataSlice';
+import { setFilters, Filter, addFilters, removeFilter } from '../slice/dataSlice';
 
 interface DropdownProps{
     label: string
@@ -50,8 +50,12 @@ const Dropdown = ({ label }: DropdownProps) => {
 
 
     useEffect(() => {
-        const obj:Filter = {name:label, filterValues: filterValue}
-        dispatch(setFilters(obj));
+        const obj: Filter = { name: label, filterValues: filterValue }
+        if (filterValue.length === 0) {
+            dispatch(removeFilter(obj));
+        } else {
+            dispatch(addFilters(obj));
+        }
     },[filterValue, label])
     
     const fetchNext = () => {

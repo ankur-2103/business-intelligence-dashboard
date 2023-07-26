@@ -35,18 +35,11 @@ export const DataSlice = createSlice({
     name: 'data',
     initialState,
     reducers: {
-        setFilters: (state, action: PayloadAction<Filter>) => {
-            const index:number = state.filters.findIndex(data => data.name === action.payload.name);
-            if (index >= 0) {
-                if (action.payload.filterValues.length === 0) {
-                    state.filters = state.filters.filter(data => data.name !== action.payload.name);
-                } else {
-                    state.filters[index] = action.payload;
-                }
-            } else {
-                state.filters.push(action.payload);
-            }
-
+        addFilters: (state, action: PayloadAction<Filter>) => {
+            state.filters.push(action.payload);
+        },
+        removeFilter: (state, action: PayloadAction<Filter>) => {
+            state.filters = state.filters.filter(item => item.name !== action.payload.name);
         },
         setNumber: (state, action: PayloadAction<number[]>) => {
             state.number = action.payload
@@ -65,4 +58,4 @@ export const DataSlice = createSlice({
 
 export default DataSlice.reducer;
 
-export const {  setFilters, setNumber, setMod350, setMod8000, setMod20002 } = DataSlice.actions;
+export const {  addFilters, removeFilter,setNumber, setMod350, setMod8000, setMod20002 } = DataSlice.actions;
