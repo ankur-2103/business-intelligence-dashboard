@@ -7,7 +7,7 @@ export const filterDataFunction = (filterValues: Filter[], data: Data[]) => {
     }
     
     let newArr: Data[] = [];
-    console.log()
+    console.log('filter')
 
     filterValues.forEach((item, index) => {
         if (item.name === 'number') {
