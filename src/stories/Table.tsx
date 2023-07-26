@@ -52,6 +52,7 @@ const Table = () => {
 
     setData(arr.length === 0 ? data : arr)
     setCurrPage(1);
+    console.log(arr)
 
   },[filters])
 
