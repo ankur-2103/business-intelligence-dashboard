@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useAppSelector } from '../store/store';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useDispatch } from 'react-redux';
-import {  Filter, addFilters, removeFilter } from '../slice/dataSlice';
+import { Filter, addFilters, removeFilter } from '../slice/dataSlice';
 
 interface DropdownProps{
     label: string

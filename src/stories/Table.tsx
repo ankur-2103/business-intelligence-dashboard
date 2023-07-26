@@ -15,10 +15,8 @@ const Table = () => {
   const firstindex = lastindex - recordsPerPage;
   const records = data.slice(firstindex, lastindex);
   const filters = useAppSelector(state => state.data.filters);
-  const state = useAppSelector(state => state.data);
   const dispatch = useAppDispatch();
 
-  console.log(state);
 
   useEffect(() => {
     const arr = filterDataFunction(filters, rawData);
@@ -52,7 +50,6 @@ const Table = () => {
 
     setData(arr.length === 0 ? data : arr)
     setCurrPage(1);
-    console.log(arr)
 
   },[filters])
 

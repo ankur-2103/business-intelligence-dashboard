@@ -37,6 +37,5 @@ export const filterDataFunction = (filterValues: Filter[], data: Data[]) => {
         
     })
     
-    console.log('filter', newArr)
     return newArr
 }
