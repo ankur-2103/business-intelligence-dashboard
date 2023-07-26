@@ -7,8 +7,7 @@ export const filterDataFunction = (filterValues: Filter[], data: Data[]) => {
     }
     
     let newArr: Data[] = [];
-    console.log('filter')
-
+    
     filterValues.forEach((item, index) => {
         if (item.name === 'number') {
             if (index === 0) {
@@ -35,8 +34,9 @@ export const filterDataFunction = (filterValues: Filter[], data: Data[]) => {
                 newArr = (newArr.filter(val => item.filterValues.includes(val.mod20002)))
             }
         }
-
+        
     })
-
+    
+    console.log('filter', newArr)
     return newArr
 }
