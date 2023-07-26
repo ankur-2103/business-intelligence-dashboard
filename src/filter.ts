@@ -1,11 +1,13 @@
+import { Data, Filter } from "./slice/dataSlice"
 
-export const filterDataFunction = (filterValues, data) => {
+export const filterDataFunction = (filterValues: Filter[], data: Data[]) => {
 
     if (filterValues.length === 0) {
         return data;
     }
     
-    let newArr = [];
+    let newArr: Data[] = [];
+    console.log()
 
     filterValues.forEach((item, index) => {
         if (item.name === 'number') {
