@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import { store } from './store/store'
 import Dropdown from './stories/Dropdown'
 import Table from './stories/Table'
-import { setMod350 } from './slice/dataSlice'
 
 interface Open{
   number: boolean,
