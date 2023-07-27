@@ -16,15 +16,9 @@ function App() {
 
   const [open, setOpen] = useState<Open>({ number: false, mod350: false, mod8000: false, mod20002: false });
 
-  const handleClick = () => {
-    if (open.number || open.mod350 || open.mod8000 || open.mod20002) {
-      // setOpen({ number: false, mod350: false, mod8000: false, mod20002: false })
-    }
-  }
-
   return (
     <Provider store={store}>
-      <div className='container' onClick={handleClick}>
+      <div className='container'>
         <div className='dropdown-container'>
           <Dropdown label='number' open={open.number} handleOpen={()=>setOpen({number:!open.number, mod350:false, mod8000:false, mod20002:false})} />
           <Dropdown label='mod350' open={open.mod350} handleOpen={()=>setOpen({number:false, mod350:!open.mod350, mod8000:false, mod20002:false})} />
