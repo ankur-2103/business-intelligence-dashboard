@@ -117,7 +117,7 @@ const Dropdown = ({ label, open, handleOpen }: DropdownProps) => {
                 </div>
                 {!open && <img src={DownArrow} style={{ width: '15px' }} />}
                 {   open &&
-                    <div className='dropdown-checklist' >
+                    <div className='dropdown-checklist' onMouseLeave={handleOpen}>
                         <span className='dropdown-search'>
                             <img src={Search} style={{ width: '20px', height:'20px' }} />
                             <input type='string' style={{border:'none', outline:'none', color:'black',fontSize:'16px'}} placeholder='Type to search' value={search} onChange={handleSearch}/>
