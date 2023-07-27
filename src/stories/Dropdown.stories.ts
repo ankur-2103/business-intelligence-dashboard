@@ -9,6 +9,9 @@ const meta = {
     },
     tags: ['autodocs'],
     argTypes: {
+        label: { control: 'text' },
+        open: { control: 'boolean' },
+        handleOpen: {action: 'clicked'}
     }
 } satisfies Meta<typeof Dropdown>;
 
@@ -17,6 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        label: 'dropdown'
+        label: 'dropdown',
+        open: false,
     }
 }
