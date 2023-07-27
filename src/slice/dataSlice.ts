@@ -36,7 +36,17 @@ export const DataSlice = createSlice({
     initialState,
     reducers: {
         addFilters: (state, action: PayloadAction<Filter>) => {
-            state.filters.push(action.payload);
+            if (state.filters.filter(item => item.name === action.payload.name).length === 0) {
+                state.filters.push(action.payload);
+            } else {
+                state.filters = state.filters.map(item => {
+                    if (item.name === action.payload.name) {
+                        return action.payload
+                    } else {
+                        return item;
+                    }
+                })
+            }
         },
         removeFilter: (state, action: PayloadAction<Filter>) => {
             state.filters = state.filters.filter(item => item.name !== action.payload.name);

@@ -46,15 +46,15 @@ const Dropdown = ({ label, open, handleOpen }: DropdownProps) => {
             }
         }
         setDropDownData()
-    }, [label, rawData, open]);
-
-
-
+    }, [label, open]);
+    
     useEffect(() => {
         const obj: Filter = { name: label, filterValues: filterValue }
         if (filterValue.length === 0) {
             dispatch(removeFilter(obj));
         } else {
+            setData([...filterValue, ...data.filter(item => !filterValue.includes(item))]);
+            console.log([...filterValue, ...data.filter(item => !filterValue.includes(item))]);
             dispatch(addFilters(obj));
         }
     },[filterValue, label])
@@ -79,7 +79,7 @@ const Dropdown = ({ label, open, handleOpen }: DropdownProps) => {
             } 
         },500)
     }
-
+    
     const handleFilterValue = ( e: React.ChangeEvent<HTMLInputElement>) => {
         const { value, checked } = e.target;
         if (checked) {

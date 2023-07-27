@@ -12,6 +12,7 @@ export const filterDataFunction = (filterValues: Filter[], data: Data[]) => {
         if (item.name === 'number') {
             if (index === 0) {
                 newArr = data.filter(val => item.filterValues.includes(val.number));
+                console.log(item.filterValues.includes(110))
             } else {
                 newArr = (newArr.filter(val => item.filterValues.includes(val.number)))
             }
