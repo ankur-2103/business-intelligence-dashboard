@@ -53,7 +53,6 @@ const Dropdown = ({ label, open, handleOpen }: DropdownProps) => {
         if (filterValue.length === 0) {
             dispatch(removeFilter(obj));
         } else {
-            setData([...filterValue, ...data.filter(item => !filterValue.includes(item))]);
             dispatch(addFilters(obj));
         }
     },[filterValue, label])
