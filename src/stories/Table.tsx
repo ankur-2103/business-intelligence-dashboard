@@ -1,5 +1,6 @@
 import './table.css';
 import LeftArrow from '../assets/left.svg'
+import RightArrow from '../assets/right.svg'
 import { useState, useEffect } from 'react';
 import { filterDataFunction } from '../filter';
 import { useAppSelector, useAppDispatch } from '../store/store';
@@ -81,8 +82,8 @@ const Table = () => {
       </div>
       <div className='pagination'>
         {(firstindex + 1) + " - " + (lastindex >= data.length ? data.length : lastindex) + " / " + (data.length)}
-        <img src={LeftArrow} className='left' style={{display:`${firstindex === 0 ? 'none' : 'block'}`}} onClick={()=>setCurrPage(currPage-1)}/>
-        <img src={LeftArrow} className='right' style={{ display:`${lastindex >= data.length ? 'none' : 'block'}`}} onClick={()=>setCurrPage(currPage+1)}/>
+        <img src={LeftArrow} style={{display:`${firstindex === 0 ? 'none' : 'block'}`}} onClick={()=>setCurrPage(currPage-1)}/>
+        <img src={RightArrow} style={{ display:`${lastindex >= data.length ? 'none' : 'block'}`}} onClick={()=>setCurrPage(currPage+1)}/>
       </div>
     </div>
   )
