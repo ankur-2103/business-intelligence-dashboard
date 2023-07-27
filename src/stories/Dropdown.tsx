@@ -30,15 +30,15 @@ const Dropdown = ({ label, open, handleOpen }: DropdownProps) => {
         const setDropDownData = () => {
             if (open) {
                 if (label === 'number') {
-                    setData(rawData.number.slice(0,20));
+                    setData([...filterValue,...rawData.number.slice(0,20).filter(item => !filterValue.includes(item))]);
                 } else if (label === 'mod350') {
-                    setData(rawData.mod350.slice(0,20));
+                    setData([...filterValue,...rawData.mod350.slice(0,20).filter(item => !filterValue.includes(item))]);
                 }
                 else if (label === 'mod8000') {
-                    setData(rawData.mod8000.slice(0,20));
+                    setData([...filterValue,...rawData.mod8000.slice(0,20).filter(item => !filterValue.includes(item))]);
                 }
                 else if (label === 'mod20002') {
-                    setData(rawData.mod20002.slice(0,20));
+                    setData([...filterValue,...rawData.mod20002.slice(0,20).filter(item => !filterValue.includes(item))]);
                 }                    
             } else {
                 setData([]);
