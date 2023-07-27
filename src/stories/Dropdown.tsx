@@ -9,14 +9,15 @@ import { useDispatch } from 'react-redux';
 import { Filter, addFilters, removeFilter } from '../slice/dataSlice';
 
 interface DropdownProps{
-    label: string
+    label: string,
+    open: boolean,
+    handleOpen: () => void,
 }
 
 type IsOpen = boolean
 
-const Dropdown = ({ label }: DropdownProps) => {
+const Dropdown = ({ label, open, handleOpen }: DropdownProps) => {
     
-    const [open, setOpen] = useState<IsOpen>(false);
     const [hasNext, setHasNext] = useState<IsOpen>(true);
     const [index, setIndex] = useState<number>(20);
     const [data, setData] = useState<number[]>([]);
@@ -112,7 +113,7 @@ const Dropdown = ({ label }: DropdownProps) => {
     return (
         <>
             <button className={`dropdown-btn ${open && 'selected'}`} >
-                <div className='dropdown' onClick={() => setOpen(!open)}>
+                <div className='dropdown' onClick={handleOpen}>
                     {open && <img src={Minus} style={{width:'15px', height:'15px', border:'1px solid black'}}/>}
                     {label}
                 </div>

@@ -81,8 +81,8 @@ const Table = () => {
       </div>
       <div className='pagination'>
         {(firstindex + 1) + " - " + (lastindex >= data.length ? data.length : lastindex) + " / " + (data.length)}
-        <img src={LeftArrow} style={{cursor:'pointer',width:'20px', borderRadius:"5px",height:"20px", backgroundColor:`${firstindex === 0 ? 'white' : 'gray'}`,display:`${firstindex === 0 ? 'none' : 'block'}`}} onClick={()=>setCurrPage(currPage-1)}/>
-        <img src={LeftArrow} style={{cursor:'pointer',width:'20px', borderRadius:"5px",height:"20px", backgroundColor:`${lastindex >= data.length ? 'white' : 'gray'}`,display:`${lastindex >= data.length ? 'none' : 'block'}`, rotate:'180deg'}} onClick={()=>setCurrPage(currPage+1)}/>
+        <img src={LeftArrow} style={{display:`${firstindex === 0 ? 'none' : 'block'}`}} onClick={()=>setCurrPage(currPage-1)}/>
+        <img src={LeftArrow} style={{ display:`${lastindex >= data.length ? 'none' : 'block'}`, rotate:'180deg'}} onClick={()=>setCurrPage(currPage+1)}/>
       </div>
     </div>
   )
