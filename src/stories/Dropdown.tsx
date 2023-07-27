@@ -54,7 +54,6 @@ const Dropdown = ({ label, open, handleOpen }: DropdownProps) => {
             dispatch(removeFilter(obj));
         } else {
             setData([...filterValue, ...data.filter(item => !filterValue.includes(item))]);
-            console.log([...filterValue, ...data.filter(item => !filterValue.includes(item))]);
             dispatch(addFilters(obj));
         }
     },[filterValue, label])
