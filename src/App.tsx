@@ -18,7 +18,7 @@ function App() {
 
   const handleClick = () => {
     if (open.number || open.mod350 || open.mod8000 || open.mod20002) {
-      setOpen({ number: false, mod350: false, mod8000: false, mod20002: false })
+      // setOpen({ number: false, mod350: false, mod8000: false, mod20002: false })
     }
   }
 
@@ -27,9 +27,9 @@ function App() {
       <div className='container' onClick={handleClick}>
         <div className='dropdown-container'>
           <Dropdown label='number' open={open.number} handleOpen={()=>setOpen({number:!open.number, mod350:false, mod8000:false, mod20002:false})} />
-          <Dropdown label='mod350' open={open.mod350} handleOpen={()=>setOpen({number:false, mod350:!open.mod350, mod8000:false, mod20002:false})}/>
-          <Dropdown label='mod8000' open={open.mod8000} handleOpen={()=>setOpen({number:false, mod350:false, mod8000:!open.mod8000, mod20002:false})}/>
-          <Dropdown label='mod20002' open={open.mod20002} handleOpen={()=>setOpen({number:false, mod350:false, mod8000:false, mod20002:!open.mod20002})}/>
+          <Dropdown label='mod350' open={open.mod350} handleOpen={()=>setOpen({number:false, mod350:!open.mod350, mod8000:false, mod20002:false})} />
+          <Dropdown label='mod8000' open={open.mod8000} handleOpen={()=>setOpen({number:false, mod350:false, mod8000:!open.mod8000, mod20002:false})} />
+          <Dropdown label='mod20002' open={open.mod20002} handleOpen={()=>setOpen({number:false, mod350:false, mod8000:false, mod20002:!open.mod20002})} />
         </div>
         <Table/>
       </div>
